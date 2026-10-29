@@ -13,6 +13,7 @@
                       <tr>
                         <th scope="col">Email</th>
                         <th scope="col">Date</th>
+                        <th scope="col">Role</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -20,6 +21,13 @@
                       <tr class="{{cycle(['table-primary', 'table-secondary'], loop.index0)}}">
                         <td>{{user.email | lower}}</td>
                         <td>{{user.dateInscription | date("d-m-Y à H:i:s") }}</td>
+                          {%if "ROLE_ADMIN" in user.roles %}
+                              <td>{{ "Administrateur" | capitalize}}</td>
+                            {%elseif "ROLE_MOD" in user.roles %}
+                              <td>{{ "Modérateur" | capitalize}}</td>
+                            {%else%}
+                              <td>{{ "Utilisateur" | capitalize}}</td>
+                          {% endif %}
                       </tr>
                     {% endfor %}
                     </tbody>
