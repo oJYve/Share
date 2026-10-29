@@ -29,6 +29,8 @@ class RegistrationController extends AbstractController
             // encode the plain password
             $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
 
+            $user->setDateInscription(new \DateTime()); // ajouter à la suite d'une erreur, remplis la colonne date_inscription
+
             $entityManager->persist($user);
             $entityManager->flush();
 

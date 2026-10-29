@@ -9,13 +9,16 @@
     <div class="row justify-content-center"> 
         <div class="col-12 col-md-8 bg-white p-4 m-0 text-primary">
             <div class="table-responsive">
+              {{ form_start(form) }}
                 <table class="table table-hover">
                     <thead>
                       <tr>
                         <th scope="col">Nom</th>
                         <th scope="col">Sujet</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Message</th>
                         <th scope="col">Date</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -24,11 +27,18 @@
                         <td>{{contact.nom | capitalize}}</td>
                         <td>{{contact.sujet | capitalize}}</td>
                         <td>{{contact.email | lower}}</td>
+                        <td>{{contact.message}}</td>
                         <td>{{contact.dateEnvoie | date("d-m-Y à H:i:s") }}</td>
+                        <td>
+                          <a href="{{path('app_suppr_contact', {'id':contact.id})}}"><i class="bi bi-trash3 text-dark"></i></a>
+                          {{ form_widget(form.contacts[contact.id]) }}
+                        </td>
                       </tr>
-                      {% endfor %}
+                    {% endfor %}
                     </tbody>
                 </table>
+                {{form_widget(form.Supprimer) }}
+                {{ form_end(form) }}
             </div>
         </div>
     </div>

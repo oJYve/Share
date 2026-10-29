@@ -16,7 +16,7 @@ use App\Form\SupprCategorieType;
 
 final class CategorieController extends AbstractController
 {
-    #[Route('/creer-categorie', name: 'app_creer_categorie')]
+    #[Route('/private-creer-categorie', name: 'app_creer_categorie')]
     public function creerCategorie(Request $request, EntityManagerInterface $em): Response
     {
         $categorie = new Categorie();
@@ -36,7 +36,7 @@ final class CategorieController extends AbstractController
         ]);
     }
 
-    #[Route('/liste-categories', name: 'app_liste_categories')]
+    #[Route('/private-liste-categories', name: 'app_liste_categories')]
     public function listeCategorie(CategorieRepository $categorieRepository, Request $request, EntityManagerInterface $em): Response
     {
         $categories = $categorieRepository->findAll(); 
@@ -61,7 +61,7 @@ final class CategorieController extends AbstractController
         ]);
     }
 
-    #[Route('/modif-categorie/{id}', name: 'app_modif_categorie')]
+    #[Route('/private-modif-categorie/{id}', name: 'app_modif_categorie')]
     public function modifCategorie(Categorie $categorie, Request $request, EntityManagerInterface $em): Response
     {
         $form = $this->createForm(ModifCategorieType::class, $categorie);
@@ -80,7 +80,7 @@ final class CategorieController extends AbstractController
         ]);
     }
 
-    #[Route('/suppr-categorie/{id}', name: 'app_suppr_categorie')]
+    #[Route('/private-suppr-categorie/{id}', name: 'app_suppr_categorie')]
     public function supprCategorie(Categorie $categorie, EntityManagerInterface $em): Response
     {
         if($categorie != null)

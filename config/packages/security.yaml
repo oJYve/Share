@@ -41,7 +41,12 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-
+        - { path: ^/private, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/mod, roles: ROLE_MOD }
+        - { path: ^/admin, roles: ROLE_ADMIN}
+    role_hierarchy:
+        ROLE_MOD: [ROLE_USER]
+        ROLE_ADMIN: [ROLE_MOD]
 when@test:
     security:
         password_hashers:

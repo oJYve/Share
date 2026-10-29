@@ -1,7 +1,100 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{parent()}}Mention Légal{% endblock %}
+{% block title %}{{ parent() }}Mentions légales{% endblock %}
 
 {% block body %}
-<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">Mention Légal</h1>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+            <h1 class="display-6 fw-bold mb-2"><i class="bi bi-file-earmark-text"></i> Mentions légales</h1>
+            <p class="text-muted mb-4">Dernière mise à jour : {{ "now"|date("d/m/Y") }}</p>
+
+            <div class="alert alert-info">
+                <i class="bi bi-info-circle"></i>
+                Ce site a été réalisé dans le cadre d'un projet scolaire. Les informations ci-dessous sont fictives.
+            </div>
+
+            <section class="mb-4">
+                <h2 class="h4 border-bottom pb-2">1. Éditeur du site</h2>
+                <p class="mb-1"><strong>Nom du site :</strong> Share</p>
+                <p class="mb-1"><strong>Éditeur :</strong> Équipe projet Share (projet étudiant)</p>
+                <p class="mb-1"><strong>Adresse :</strong> 12 rue de l'Exemple, 75000 Paris, France</p>
+                <p class="mb-1"><strong>Email :</strong> contact@share-exemple.fr</p>
+                <p class="mb-1"><strong>Téléphone :</strong> 01 23 45 67 89</p>
+                <p class="mb-0"><strong>Directeur de la publication :</strong> Jean Dupont</p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4 border-bottom pb-2">2. Hébergement</h2>
+                <p class="mb-1"><strong>Hébergeur :</strong> Hébergement Exemple SAS</p>
+                <p class="mb-1"><strong>Adresse :</strong> 1 avenue des Serveurs, 59000 Lille, France</p>
+                <p class="mb-0"><strong>Téléphone :</strong> 03 00 00 00 00</p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4 border-bottom pb-2">3. Propriété intellectuelle</h2>
+                <p>
+                    L'ensemble des éléments du site Share (textes, logo, structure, code) est la propriété de
+                    l'éditeur, sauf mention contraire. Toute reproduction, totale ou partielle, sans autorisation
+                    préalable est interdite.
+                </p>
+                <p>
+                    Les fichiers déposés par les utilisateurs restent la propriété de leurs auteurs. En déposant un
+                    fichier, l'utilisateur garantit détenir les droits nécessaires à sa diffusion.
+                </p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4 border-bottom pb-2">4. Responsabilité et contenus déposés</h2>
+                <p>
+                    Share est une plateforme de partage : l'éditeur agit en qualité d'hébergeur des contenus déposés
+                    par les utilisateurs et ne peut en contrôler a priori l'intégralité. Il est interdit de déposer
+                    des fichiers illicites, malveillants (virus, logiciels espions) ou portant atteinte aux droits
+                    d'autrui.
+                </p>
+                <p>
+                    Tout contenu signalé comme manifestement illicite pourra être supprimé. Pour signaler un contenu,
+                    utilisez la page <a href="{{ path('app_contact') }}">Contact</a>.
+                </p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4 border-bottom pb-2">5. Données personnelles (RGPD)</h2>
+                <p>
+                    Les données collectées (adresse email, mot de passe chiffré, messages envoyés via le formulaire de
+                    contact) sont utilisées uniquement pour le fonctionnement du site : gestion des comptes, des dépôts
+                    et réponse aux demandes. Elles ne sont ni vendues ni transmises à des tiers.
+                </p>
+                <p>
+                    Conformément au Règlement Général sur la Protection des Données, vous disposez d'un droit d'accès,
+                    de rectification et de suppression de vos données. Pour l'exercer, contactez-nous à
+                    <a href="mailto:contact@share-exemple.fr">contact@share-exemple.fr</a>.
+                </p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4 border-bottom pb-2">6. Cookies</h2>
+                <p>
+                    Le site utilise uniquement des cookies techniques nécessaires à son fonctionnement, notamment le
+                    cookie de session permettant de rester connecté. Aucun cookie publicitaire ou de mesure d'audience
+                    n'est utilisé.
+                </p>
+            </section>
+
+            <section class="mb-4">
+                <h2 class="h4 border-bottom pb-2">7. Droit applicable</h2>
+                <p>
+                    Les présentes mentions légales sont régies par le droit français. En cas de litige, les tribunaux
+                    français seront seuls compétents.
+                </p>
+            </section>
+
+            <div class="text-center mt-5">
+                <a href="{{ path('app_accueil') }}" class="btn btn-primary"><i class="bi bi-house"></i> Retour à l'accueil</a>
+            </div>
+
+        </div>
+    </div>
+</div>
 {% endblock %}

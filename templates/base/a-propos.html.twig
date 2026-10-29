@@ -1,1 +1,92 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}À propos{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+
+    {# En-tête #}
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold"><i class="bi bi-cloud-arrow-up"></i> À propos de Share</h1>
+        <p class="lead text-muted">
+            La plateforme simple et rapide pour déposer, partager et télécharger vos fichiers.
+        </p>
+    </div>
+
+    {# Présentation #}
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8">
+            <h2 class="h3 mb-3">Notre mission</h2>
+            <p>
+                <strong>Share</strong> est né d'une idée simple : rendre le partage de fichiers accessible à tous,
+                sans complication. Que ce soit pour transmettre un document à un camarade, partager des ressources
+                avec une équipe ou mettre à disposition des fichiers pour une communauté, Share vous permet de le
+                faire en quelques clics.
+            </p>
+            <p>
+                Il suffit de déposer votre fichier, de choisir sa catégorie, et il devient disponible au
+                téléchargement pour les autres utilisateurs.
+            </p>
+        </div>
+    </div>
+
+    {# Fonctionnalités #}
+    <h2 class="h3 text-center mb-4">Ce que vous pouvez faire</h2>
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card h-100 text-center shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-upload fs-1 text-primary"></i>
+                    <h3 class="h5 card-title mt-3">Déposer</h3>
+                    <p class="card-text">Envoyez vos fichiers en quelques secondes et classez-les par catégorie.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 text-center shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-download fs-1 text-primary"></i>
+                    <h3 class="h5 card-title mt-3">Télécharger</h3>
+                    <p class="card-text">Retrouvez les fichiers partagés par la communauté et téléchargez-les librement.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 text-center shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-shield-lock fs-1 text-primary"></i>
+                    <h3 class="h5 card-title mt-3">En toute sécurité</h3>
+                    <p class="card-text">Un compte personnel pour gérer vos dépôts, et une équipe de modération attentive.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Le projet #}
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8">
+            <h2 class="h3 mb-3">Le projet</h2>
+            <p>
+                Share a été conçu et développé dans le cadre d'un projet scolaire. Il repose sur le framework
+                <strong>Symfony</strong> (PHP) pour la partie serveur et sur <strong>Bootstrap</strong> pour
+                l'interface.
+            </p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>Gestion des utilisateurs (inscription, connexion, rôles)</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>Dépôt et téléchargement de fichiers</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>Organisation des fichiers par catégories</li>
+                <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>Formulaire de contact et modération</li>
+            </ul>
+        </div>
+    </div>
+
+    {# Appel à l'action #}
+    <div class="text-center p-5 bg-light rounded-3">
+        <h2 class="h4">Prêt à partager ?</h2>
+        <p class="text-muted">Déposez votre premier fichier ou posez-nous une question.</p>
+        <a href="{{ path('app_depot') }}" class="btn btn-primary me-2"><i class="bi bi-upload"></i> Déposer un fichier</a>
+        <a href="{{ path('app_contact') }}" class="btn btn-outline-primary"><i class="bi bi-envelope"></i> Nous contacter</a>
+    </div>
+
+</div>
+{% endblock %}
